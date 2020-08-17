@@ -7,8 +7,6 @@ export const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   }
 
-  console.log({ isMenuOpen })
-
   return (
 
     <div className="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800 mb-4">
