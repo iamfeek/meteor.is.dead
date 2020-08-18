@@ -1,11 +1,17 @@
 import { Meteor } from 'meteor/meteor';
 import { LinksCollection } from '/imports/api/links';
 
+import { SizesCollection } from '/imports/api/sizes';
+
 function insertLink(title: string, url: string) {
   LinksCollection.insert({ title, url, createdAt: new Date() });
 }
 
 Meteor.startup(() => {
+  if (SizesCollection.find().count() === 0) {
+    SizesCollection.insert({ label: "seeded", createdAt: new Date() });
+  }
+
   // If the Links collection is empty, add some data.
   if (LinksCollection.find().count() === 0) {
     insertLink(

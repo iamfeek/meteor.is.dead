@@ -6,4 +6,4 @@ export interface Size {
   createdAt: Date;
 }
 
-export const LinksCollection = new Mongo.Collection<Size>('sizes');
+export const SizesCollection = new Mongo.Collection<Size>('sizes');

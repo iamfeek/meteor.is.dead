@@ -7,7 +7,7 @@ import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import { Layout } from '/imports/ui/components/Layout';
 import { AdminPage } from '/imports/ui/pages/AdminPage';
 import { NotFoundPage } from '/imports/ui/pages/NotFoundPage';
-import { ManageSizesPage } from '/imports/ui/pages/ManageSizesPage';
+import ManageSizesPage from '/imports/ui/pages/ManageSizesPage';
 
 
 FlowRouter.route('/', {
