@@ -8,6 +8,7 @@ import { Layout } from '/imports/ui/components/Layout';
 import { AdminPage } from '/imports/ui/pages/AdminPage';
 import { NotFoundPage } from '/imports/ui/pages/NotFoundPage';
 import ManageSizesPage from '/imports/ui/pages/ManageSizesPage';
+import ManageOutfitPage from '../imports/ui/pages/ManageOutfitsPage';
 
 
 FlowRouter.route('/', {
@@ -33,6 +34,15 @@ FlowRouter.route('/admin/sizes', {
   action() {
     mount(Layout, {
       main: <ManageSizesPage />,
+    });
+  }
+});
+
+FlowRouter.route('/admin/outfits', {
+  name: 'admin.outfits',
+  action() {
+    mount(Layout, {
+      main: <ManageOutfitPage />,
     });
   }
 });

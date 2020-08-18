@@ -1,5 +1,6 @@
 import React from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
+
 import { SizesCollection, Size } from '/imports/api/sizes';
 
 const ManageSizesPage: React.FC<{ sizes: Size[] }> = ({ sizes }) => {

@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { LinksCollection } from '/imports/api/links';
-
 import { SizesCollection } from '/imports/api/sizes';
+import '/imports/api/outfits'
 
 function insertLink(title: string, url: string) {
   LinksCollection.insert({ title, url, createdAt: new Date() });
