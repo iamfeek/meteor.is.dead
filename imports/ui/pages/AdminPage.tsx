@@ -1,9 +1,8 @@
 import React from 'react';
-import { Layout } from '../components/Layout';
 
 export const AdminPage = () => {
-  return <Layout>
-    <div className="px-10 grid grid-cols-4 gap-4">
+  return <>
+    <div className="grid grid-cols-4 gap-4">
       <div
         className="col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1 flex flex-col items-center"
       >
@@ -19,5 +18,5 @@ export const AdminPage = () => {
         </div>
       </div>
     </div>
-  </Layout>
+  </>
 }
