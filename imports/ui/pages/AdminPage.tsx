@@ -28,6 +28,10 @@ export const AdminPage = () => {
               <a href="/admin/outfits" className="text-lg text-red-600 font-bold">
                 Manage
               </a>
+
+              <a href="/live" className="text-lg text-red-600 font-bold">
+                Live Dashboard
+              </a>
             </div>
           </div>
         </div>
