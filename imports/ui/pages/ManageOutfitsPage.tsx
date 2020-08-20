@@ -4,6 +4,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { OutfitCollection, Outfit } from '/imports/api/outfits';
 import { ClickableSizeItem } from '../components/ClickableSizeItem';
 import { SizesCollection, Size } from '/imports/api/sizes';
+import { Button } from 'react-bootstrap';
 
 const ManageOutfitsPage: React.FC<{ outfits: Outfit[], sizes: Size[] }> = ({ sizes, outfits }) => {
   const [name, setName] = React.useState("");
@@ -60,18 +61,11 @@ const ManageOutfitsPage: React.FC<{ outfits: Outfit[], sizes: Size[] }> = ({ siz
             placeholder="Price of outfit" className="p-1 px-2 appearance-none outline-none w-full text-gray-800" />
         </div>
       </div>
-
-      {sizes.map(size => <ClickableSizeItem
-        onClick={() => toggleSelected(size._id!)}
-        key={size._id}
-        size={size.label}
-        selected={selectedSizeIds.includes(size._id!)}
-      />)}
       <button onClick={insertOutfit}>Insert</button>
       <div className="container-fluid"></div>
       <div className="card shadow mb-4">
         <div className="card-header py-3">
-          <h6 className="m-0 font-weight-bold text-primary">DataTables Example</h6>
+          <h6 className="m-0 font-weight-bold text-primary">Outfits</h6>
         </div>
         <div className="card-body">
           <div className="table-responsive">
@@ -79,32 +73,29 @@ const ManageOutfitsPage: React.FC<{ outfits: Outfit[], sizes: Size[] }> = ({ siz
               <thead>
                 <tr>
                   <th>Name</th>
-                  <th>Position</th>
-                  <th>Office</th>
-                  <th>Age</th>
-                  <th>Start date</th>
-                  <th>Salary</th>
+                  <th>Size</th>
+                  <th>Price</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tfoot>
                 <tr>
                   <th>Name</th>
-                  <th>Position</th>
-                  <th>Office</th>
-                  <th>Age</th>
-                  <th>Start date</th>
-                  <th>Salary</th>
+                  <th>Size</th>
+                  <th>Price</th>
+                  <th>Actions</th>
                 </tr>
               </tfoot>
               <tbody>
-                <tr>
-                  <td>Tiger Nixon</td>
-                  <td>System Architect</td>
-                  <td>Edinburgh</td>
-                  <td>61</td>
-                  <td>2011/04/25</td>
-                  <td>$320,800</td>
-                </tr>
+                {outfits.map(outfit => (
+                  <tr key={outfit._id}>
+                    <td>{outfit.name}</td>
+                    <td>{outfit.size}</td>
+                    <td>${outfit.price}</td>
+                    <td><Button color="danger">Delete</Button></td>
+                  </tr>
+                ))
+                }
               </tbody>
             </table>
           </div>

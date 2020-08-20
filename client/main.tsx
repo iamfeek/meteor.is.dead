@@ -17,7 +17,7 @@ FlowRouter.route('/', {
   name: 'landing',
   action() {
     mount(Layout, {
-      main: <Landing />,
+      main: <AdminPage />,
     });
   }
 });

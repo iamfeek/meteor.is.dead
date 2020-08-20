@@ -6,7 +6,7 @@ export const Layout: React.FC<{ main: any, navTitle: string }> = ({ main, navTit
 
       <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-        <a className="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
           <div className="sidebar-brand-text mx-3">The Feeks</div>
         </a>
 
@@ -55,13 +55,16 @@ export const Layout: React.FC<{ main: any, navTitle: string }> = ({ main, navTit
       <div id="content-wrapper" className="d-flex flex-column">
 
         <div id="content">
-
           <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-            <strong>{navTitle}</strong>
+            <div className="container-fluid">
+              <strong>{navTitle}</strong>
+            </div>
           </nav>
 
+          <div className="container-fluid">
+            {main}
 
-          {main}
+          </div>
         </div>
 
         <footer className="sticky-footer bg-white">
